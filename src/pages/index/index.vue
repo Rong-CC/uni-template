@@ -4,29 +4,37 @@
  * @@后台人员: xxx
  * @Date: 2022-10-20 19:55:51
  * @LastEditors: rongcheng
- * @LastEditTime: 2022-10-21 21:28:40
+ * @LastEditTime: 2022-10-24 19:46:28
 -->
 <template>
 	<view class="content">
 		<!-- <image class="logo" src="../../static/logo.png"></image> -->
 		<view>
 			<text class="title">{{ title }}</text>
-			<!-- <text class="title">{{title1}}</text> -->
 		</view>
 	</view>
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { defineComponent, reactive, ref, toRefs } from '@vue/composition-api'
 import { onReady } from '@dcloudio/uni-app'
+import request from '@/utils/request/index'
 export default defineComponent({
 	setup() {
 		const title = ref('Hello')
+		const state = reactive({
+			name: '',
+		})
 		onReady(() => {
 			console.log('onReady')
+			console.log(request, 'resquest')
+			request.get('/').then((res) => {
+				console.log(res, '1')
+			})
 		})
 		return {
 			title,
+			...toRefs(state),
 		}
 	},
 })
