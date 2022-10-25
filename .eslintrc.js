@@ -36,7 +36,15 @@ module.exports = {
 		],
 		'vue/singleline-html-element-content-newline': 'off',
 		'vue/multiline-html-element-content-newline': 'off',
-		'vue/name-property-casing': ['error', 'PascalCase'],
+		//为 Vue 组件中的 name 属性强制使用特定大小写(PascalCase | kebab-case)
+		// 'vue/name-property-casing': ['error', 'PascalCase'],
+		// 驼峰命名规则
+		'vue/multi-word-component-names': [
+			'error',
+			{
+				ignores: ['index'], //需要忽略的组件名
+			},
+		],
 		'vue/no-v-html': 'off',
 		'accessor-pairs': 2,
 

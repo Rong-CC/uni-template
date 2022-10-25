@@ -1,11 +1,11 @@
-// /*
-//  * @Description: 
-//  * @Author: rongcheng
-//  * @@后台人员: xxx
-//  * @Date: 2022-10-20 20:11:58
-//  * @LastEditors: rongcheng
-//  * @LastEditTime: 2022-10-21 09:47:33
-//  */
+/*
+ * @Description:
+ * @Author: rongcheng
+ * @@后台人员: xxx
+ * @Date: 2022-10-20 20:11:58
+ * @LastEditors: rongcheng
+ * @LastEditTime: 2022-10-25 11:23:11
+ */
 
 // const ScriptSetup = require('unplugin-vue2-script-setup/webpack').default
 // module.exports = {
@@ -20,3 +20,6 @@
 //     config.plugins.delete('fork-ts-checker')
 //   },
 // }
+module.exports = {
+	transpileDependencies: ['uview-ui'],
+}

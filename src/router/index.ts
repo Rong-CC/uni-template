@@ -4,12 +4,13 @@
  * @@后台人员: xxx
  * @Date: 2022-10-21 10:47:07
  * @LastEditors: rongcheng
- * @LastEditTime: 2022-10-24 20:40:56
+ * @LastEditTime: 2022-10-24 20:56:10
  */
 // import uRouter from '../utils/router/index'
 import $router, { $route } from '../utils/router/index.js'
 const myRouter = $router
 const myRoute = $route
+console.log($router, $route, ':router,route')
 myRouter.beforeEach = (to: any, next: any) => {
 	// 注册全局前置守卫
 	if (to.path.includes('/test')) {

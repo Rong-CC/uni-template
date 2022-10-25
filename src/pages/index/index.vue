@@ -4,7 +4,7 @@
  * @@后台人员: xxx
  * @Date: 2022-10-20 19:55:51
  * @LastEditors: rongcheng
- * @LastEditTime: 2022-10-24 19:46:28
+ * @LastEditTime: 2022-10-25 11:58:30
 -->
 <template>
 	<view class="content">
@@ -15,26 +15,39 @@
 	</view>
 </template>
 
-<script>
-import { defineComponent, reactive, ref, toRefs } from '@vue/composition-api'
+<script lang="ts">
+import { defineComponent, ref } from '@vue/composition-api'
 import { onReady } from '@dcloudio/uni-app'
 import request from '@/utils/request/index'
+interface requestDate {
+	status: number
+	data: any[]
+	success: string
+}
+// interface stateData {
+// 	name: string
+// }
 export default defineComponent({
+	name: 'PageIndex',
 	setup() {
 		const title = ref('Hello')
-		const state = reactive({
-			name: '',
-		})
+		// const state = reactive<stateData>({
+		// 	name: '',
+		// })
+		let a = 1
+		a = 2
+		console.log(a)
 		onReady(() => {
 			console.log('onReady')
 			console.log(request, 'resquest')
-			request.get('/').then((res) => {
-				console.log(res, '1')
+			request.get('/').then((res: requestDate) => {
+				const a = res
+				console.log(a, '1')
 			})
 		})
 		return {
+			// ...toRefs(state),
 			title,
-			...toRefs(state),
 		}
 	},
 })
