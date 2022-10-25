@@ -4,12 +4,14 @@
  * @@后台人员: xxx
  * @Date: 2022-10-20 19:55:51
  * @LastEditors: rongcheng
- * @LastEditTime: 2022-10-25 11:58:30
+ * @LastEditTime: 2022-10-25 14:03:15
 -->
 <template>
 	<view class="content">
 		<!-- <image class="logo" src="../../static/logo.png"></image> -->
 		<view>
+			<u-button>默认按钮</u-button>
+			<u-button type="primary">主要按钮</u-button>
 			<text class="title">{{ title }}</text>
 		</view>
 	</view>
@@ -19,6 +21,7 @@
 import { defineComponent, ref } from '@vue/composition-api'
 import { onReady } from '@dcloudio/uni-app'
 import request from '@/utils/request/index'
+// import uButton from 'uview-ui/components/u-button/u-button.vue'
 interface requestDate {
 	status: number
 	data: any[]

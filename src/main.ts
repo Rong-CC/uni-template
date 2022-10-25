@@ -4,9 +4,10 @@
  * @@后台人员: xxx
  * @Date: 2022-10-20 19:55:51
  * @LastEditors: rongcheng
- * @LastEditTime: 2022-10-25 11:12:27
+ * @LastEditTime: 2022-10-25 13:51:30
  */
 import './composition'
+import './uni.scss'
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router/index'
